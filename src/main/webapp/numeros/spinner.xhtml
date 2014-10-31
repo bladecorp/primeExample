@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		
+		<p:fieldset legend="Spinner Basico">
+			<p:spinner suffix=" g" min="32" max="212"
+			value="#{farenheitBean.f}" stepFactor="0.5"></p:spinner>
+		<p:commandButton value="Convertir a C" ajax="false"></p:commandButton>
+		#{farenheitBean.f} °F = #{farenheitBean.c} °C
+		</p:fieldset>
+		
+	</h:form>
+		
+		<h:form>
+			<p:fieldset legend="Spinner con Ajax">
+				<p:spinner 
+					suffix=" g" min="32" max="212"
+					value="#{farenheitBean.f}" stepFactor="0.5" >
+					<p:ajax update="gradosC" />
+				</p:spinner>
+				<p:commandButton value="Convertir a C" update="gradosC"></p:commandButton>
+				Grados Centigrados: <h:outputText value="#{farenheitBean.c}" id="gradosC"></h:outputText>
+			</p:fieldset>
+		</h:form>
+		
+	<p:rating  stars="10" onRate="alert('tu calificacste: ' + value)" readonly="true" value="3" />
+	
+	
+	
+</h:body>
+</html>

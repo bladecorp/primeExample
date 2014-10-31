@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form id="f1">
+		
+		<p:inputText id="input1" value="#{farenheitBean.f}"></p:inputText>
+		<p:slider minValue="32" maxValue="212" for="input1">
+			<p:ajax event="slideEnd" update="display1"></p:ajax>
+		</p:slider>
+		Resultado: <h:outputText id="display1" value="#{farenheitBean.c}"></h:outputText>
+		
+	</h:form>
+</h:body>
+</html>

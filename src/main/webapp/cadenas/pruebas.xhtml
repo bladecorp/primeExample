@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="3" cellpadding="5">
+			<h:outputLabel for="nombre" value="Nombre:" />
+			<p:inputText  id="nombre" value="#{pruebas.nombre}" required="true" requiredMessage="Debe llenar este campo"/>
+			<p:message id="mensaje1" for="nombre"/>
+			
+			<h:outputLabel for="apellido" value="Apellido:" />
+			<p:inputText  id="apellido" value="#{pruebas.apellido}" required="true" requiredMessage="Debe llenar este campo"/>
+			<p:message id="mensaje2" for="apellido"/>
+			
+			<h:outputLabel for="telefono" value="Telefono:" />
+			<p:inputText  id="telefono" value="#{pruebas.telefono}" required="true" requiredMessage="Debe llenar este campo"/>
+			<p:message id="mensaje3" for="telefono" />
+			
+			<br />
+			<p:commandButton  value="Enviar" update="outNombre, outApellido, outTelefono, mensaje1, mensaje2, mensaje3"  
+								onclick="PF('wdialog').show()" />
+		</h:panelGrid>
+		<br />
+		<h:outputLabel  id="outNombre" value="#{pruebas.nombre}"/>
+		<h:outputLabel  id="outApellido" value="#{pruebas.apellido}"/>
+		<h:outputLabel  id="outTelefono" value="#{pruebas.telefono}"/>
+		
+		<p:dialog id="dialog" widgetVar="wdialog">Mito Code</p:dialog>
+	</h:form>
+		
+</h:body>
+</html>

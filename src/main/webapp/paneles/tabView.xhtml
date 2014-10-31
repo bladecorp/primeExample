@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		
+		<p:accordionPanel dynamic="true" cache="false">
+		<p:tab title="tabView Estático">
+			<p:tabView>
+				<p:tab title="Deportes">
+					<ui:include src="../snippets/sports.xhtml" />
+				</p:tab>
+				<p:tab title="Finanzas">
+					<ui:include src="../snippets/finance.xhtml" />
+				</p:tab>
+				<p:tab title="Clima">
+					<ui:include src="../snippets/weather.xhtml" />
+				</p:tab>
+				<p:tab title="Cursos">
+					<ui:include src="../snippets/course.xhtml" />
+				</p:tab>
+			</p:tabView>
+		</p:tab>
+		<p:tab title="tabView Dinámico">
+			<p:tabView dynamic="true" cache="false">
+				<p:tab title="Deportes">
+					<ui:include src="../snippets/sports.xhtml" />
+				</p:tab>
+				<p:tab title="Finanzas">
+					<ui:include src="../snippets/finance.xhtml" />
+				</p:tab>
+				<p:tab title="Clima">
+					<ui:include src="../snippets/weather.xhtml" />
+				</p:tab>
+				<p:tab title="Cursos">
+					<ui:include src="../snippets/course.xhtml" />
+				</p:tab>
+			</p:tabView>
+		</p:tab>
+		</p:accordionPanel>
+		
+	</h:form>
+</h:body>
+</html>

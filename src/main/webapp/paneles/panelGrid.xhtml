@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		
+		<p:accordionPanel>
+			<p:tab title="Básico">
+				<p:panelGrid columns="2">
+					<f:facet name="header">Stocks</f:facet>
+					Google
+					<h:outputText value="60.37"></h:outputText>
+					
+					Facebook
+					<h:outputText value="56.87"></h:outputText>
+					
+					Oracle
+					<h:outputText value="114.22"></h:outputText>
+					
+				</p:panelGrid>
+			</p:tab>
+			<p:tab title="colspan">
+				<p:panelGrid>
+					<f:facet name="header">
+					<p:row>
+						<p:column colspan="2">Registro</p:column>
+						</p:row>
+					</f:facet>
+					<p:row>
+						<p:column>Nombre: </p:column>
+						<p:column><p:inputText /></p:column>
+					</p:row>
+					<p:row>
+						<p:column>Email: </p:column>
+						<p:column><p:inputText /></p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="2" style="text-align: center;">
+							<p:commandButton value="Registrar"></p:commandButton>
+						</p:column>
+						
+					</p:row>
+				</p:panelGrid>
+			</p:tab>
+			<p:tab title="rowspan">
+		<p:panelGrid>
+			<f:facet name="header">
+				<p:row>
+					<p:column colspan="3">Ventas 2013</p:column>
+				</p:row>
+			</f:facet>
+			<p:row>
+				<p:column rowspan="2"><h2>Q1</h2></p:column>
+				<p:column>Producto 1</p:column>
+				<p:column>$130.40</p:column>
+			</p:row>
+			<p:row>
+				<p:column>Producto 2</p:column>
+				<p:column>$270.20</p:column>
+			</p:row>
+			<p:row>
+				<p:column rowspan="2"><h2>Q2</h2></p:column>
+				<p:column>Producto 1</p:column>
+				<p:column>$30.25</p:column>
+			</p:row>
+			<p:row>
+				<p:column>Producto 2</p:column>
+				<p:column>$148.71</p:column>
+			</p:row>
+			
+			
+		</p:panelGrid>
+	</p:tab>
+		</p:accordionPanel>
+		
+	</h:form>
+</h:body>
+</html>

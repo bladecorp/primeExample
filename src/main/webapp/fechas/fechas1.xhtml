@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<p:growl id="growl1" showDetail="true" sticky="true"></p:growl>
+		<p:fieldset legend="Calendarios">
+		<b>Fecha Inicio:</b>
+			<p:calendar value="#{fechasBean.fechaInicio}" required="true"></p:calendar>
+			<br />
+		<b>Fecha Fin:</b><br />
+			<p:calendar value="#{fechasBean.fechaFin}" required="true" mode="inline" showButtonPanel="true" navigator="true" pages="2"></p:calendar>
+		<p:commandButton action="#{fechasBean.registrar}" ajax="false" value="Registrar"></p:commandButton>
+		</p:fieldset>
+		
+	</h:form>
+</h:body>
+</html>

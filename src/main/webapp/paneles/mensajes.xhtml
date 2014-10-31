@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		
+		<p:panelGrid columns="4">
+			Mensaje: 
+			<p:editor required="true" id="mensaje" requiredMessage="Mensaje Requerido" />
+			<p:message for="mensaje" />
+			<p:tooltip for="mensaje" value="Mensaje en formato HTML" showEffect="slide" hideEffect="explode"  />
+			
+			Email:
+			<p:inputText required="true" id="email" requiredMessage="Email requerido"/>
+			<p:message for="email" />
+		</p:panelGrid>
+		
+		<p:commandButton value="Enviar datos" ajax="false"></p:commandButton>
+		
+	</h:form>
+</h:body>
+</html>

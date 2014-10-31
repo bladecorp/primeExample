@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets" 
+	xmlns:p="http://primefaces.org/ui">
+
+<!-- UI Esta es para poder utilizar estructuras de control -->
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		
+		<ui:repeat var="efecto" value="#{efectosBean.efectos}">
+			<p:fieldset legend="#{efecto}">
+				<p:calendar effect="#{efecto}" pattern="HH:mm:ss" timeOnly="true"
+							minHour="9" maxHour="18" maxMinute="10"></p:calendar>
+			</p:fieldset>
+		</ui:repeat>
+		
+	</h:form>
+</h:body>
+</html>

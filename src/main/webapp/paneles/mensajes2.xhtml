@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		
+		<p:panelGrid columns="4">
+			Mensaje: 
+			<p:editor required="true" id="mensaje" requiredMessage="Mensaje Requerido" />
+			<p:message for="mensaje" />
+			<p:tooltip for="mensaje" value="Mensaje en formato HTML" showEffect="slide" hideEffect="explode"  />
+			
+			Email:
+			<p:inputText required="true" id="email" requiredMessage="Email requerido"/>
+			<p:message for="email" />
+		</p:panelGrid>
+		
+		<p:commandButton value="Enviar datos" onsuccess="PF('confirmation').show()" />
+		
+		<p:confirmDialog header="Revisa y Confirma"
+							mensaje="Verifica la información y envia o cancela"
+							severity="info"
+							widgetVar="confirmation">
+			<h:outputText value="Mensaje de prueba" />
+			<p:commandButton value="Enviar"  onclick="PF('confirmation').hide();PF('dialogo1').show()" />
+			<p:commandButton value="Cancelar" onclick="PF('confirmation').hide();PF('dialogo2').show()" />
+		</p:confirmDialog>
+		
+		<p:dialog header="Mensaje" widgetVar="dialogo1">
+			<h2>Mensaje Enviado</h2>
+		</p:dialog>
+		<p:dialog header="Mensaje" widgetVar="dialogo2">
+			<h2>Mensaje Cancelado</h2>
+		</p:dialog>
+		
+	</h:form>
+</h:body>
+</html>
